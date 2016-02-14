@@ -8,13 +8,6 @@ body {
   line-height: 1.5;
 }
 
-blockquote {
-  margin-top: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  font-size: 1rem;
-}
-
 pre {
   padding: .5rem;
   font-size: .9rem;
@@ -30,6 +23,12 @@ pre {
   font-size: 2rem;
   font-weight: normal;
   margin-right: 20px;
+}
+.header>.description {
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 1rem;
 }
 .header>.fork-button {
   margin-bottom: -8px;
@@ -52,7 +51,6 @@ pre {
 .post-body {
   font-family: Georgia, serif;
   font-size: 1rem;
-  margin-bottom: 30px;
 }
 .post-body:not(.active)>*  {
   display: none;
