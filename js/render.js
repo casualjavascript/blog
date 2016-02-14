@@ -41,12 +41,14 @@ function generate(issue) {
   content.push('<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">'));
   content.push(marked(issue.body));
   if (search)
-    content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-via="casualjs" data-size="large">Share</a>');
+    content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-via="casualjs" data-size="large">Tweet</a>');
   content.push('</div>');
   content.push('</div>');
 
   parent.innerHTML += content.join('');
-  parent.innerHTML += '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script>';
+
+  // twitter button styling
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
 
   if (issue.comments) {
     var commentContainer = document.createElement('div');
