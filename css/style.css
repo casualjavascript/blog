@@ -49,27 +49,11 @@ pre {
 }
 
 .post-body {
-  font-family: Georgia, serif;
   font-size: 1rem;
   margin-bottom: 40px;
 }
-.post-body:not(.active)>*  {
-  display: none;
-}
-.post-body:not(.active)>:first-child  {
-  display: block;
-  opacity: 0.4;
-  transition: opacity .2s;
-}
-.post-body:not(.active)>:first-child:hover  {
-  opacity: 0.8;
-  cursor: pointer;
-}
-.post-body:not(.active)>:first-child:after {
-  display: block;
-  content: "Show full article...";
-  opacity: 0.4;
-  margin-top: 1rem;
+.post-body p, .post-body li {
+  font-family: Georgia, serif;
 }
 
 .post-meta-categories {

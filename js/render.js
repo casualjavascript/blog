@@ -39,9 +39,12 @@ function generate(issue) {
   content.push(new Date(issue.created_at).toLocaleDateString() + ', ');
   content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
   content.push('</div>');
-  content.push('<div class="post-body' + (search ? ' active">' : '" onclick="window.location.href=\'?' + issue.id + '\';">'));
-  content.push(marked(issue.body));
-  content.push('</div>');
+  if (search) {
+    content.push('<div class="post-body">');
+    content.push(marked(issue.body));
+    content.push('</div>');
+  }
+
   content.push('</div>');
 
   parent.innerHTML += content.join('');
