@@ -17,7 +17,7 @@ pre, code {
 code { padding: .25rem; }
 
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .header>.title {
   display: inline-block;
@@ -33,8 +33,12 @@ code { padding: .25rem; }
   padding-bottom: 4px;
   font-size: 1rem;
 }
-.header>.fork-button {
-  margin-bottom: -8px;
+.header>.description>p {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 0;
+  background: #fafafa;
+  border-radius: 0 4px 4px 4px;
 }
 
 .post {
@@ -94,7 +98,7 @@ code { padding: .25rem; }
 }
 .post-comment-body {
   background: #fafafa;
-  padding: .5rem;
+  padding: 8px 16px;
   border: 1px solid #efefef;
   border-radius: 0 4px 4px 4px;
   margin-top: 8px;
