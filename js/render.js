@@ -38,8 +38,8 @@ function generate(issue) {
   content.push('</div>');
   content.push('<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">'));
   content.push(marked(issue.body));
-  content.push('</div>');
   content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://' + (window.location.href + window.location.search) + '" data-text="' + issue.title + '" data-via="casualjs" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script>');
+  content.push('</div>');
   content.push('</div>');
 
   parent.innerHTML += content.join('');
