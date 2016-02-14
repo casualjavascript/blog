@@ -46,9 +46,7 @@ function generate(issue) {
   content.push('</div>');
 
   parent.innerHTML += content.join('');
-
-  // exec twitter button styling
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
+  parent.innerHTML += '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script>';
 
   if (issue.comments) {
     var commentContainer = document.createElement('div');
@@ -81,7 +79,8 @@ function generate(issue) {
       comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
     });
-  }
+  } else
+    parent.innerHTML += '<a href="' + issue.html_url + '">add comment</a>';
 }
 
 // renders github issues
