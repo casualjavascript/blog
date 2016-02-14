@@ -12,6 +12,13 @@ blockquote {
   font-size: 1rem;
 }
 
+pre {
+  padding: .5rem;
+  font-size: .9rem;
+  background: #fafafa;
+  border: 1px solid #efefef;
+}
+
 .header {
   margin-bottom: 40px;
 }
