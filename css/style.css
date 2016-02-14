@@ -52,7 +52,7 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
-.post-body:not(.active)>:first-child:hover:after {
+.post-body:not(.active)>:first-child:after {
   display: block;
   content: "Show full article...";
   opacity: 0.4;
