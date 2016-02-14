@@ -31,7 +31,7 @@ function generate(issue) {
   content.push('<div class="post-meta-date">');
   content.push(new Date(issue.created_at).toLocaleDateString());
   content.push('</div>');
-  content.push('<div class="post-body">');
+  content.push('<div class="post-body" onclick="this.classList.toggle(\'active\');">');
   content.push(marked(issue.body));
   content.push('</div>');
   content.push('</div>');
