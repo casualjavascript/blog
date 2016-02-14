@@ -9,6 +9,9 @@ body {
 }
 
 blockquote {
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
   font-size: 1rem;
 }
 
@@ -20,7 +23,7 @@ pre {
 }
 
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 .header>.title {
   display: inline-block;

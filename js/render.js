@@ -17,6 +17,8 @@ function generate(issue) {
   var search = window.location.search;
   if (search && search.indexOf(issue.id) === -1)
     return;
+  else
+    document.title = issue.title;
 
   var parent = document.querySelector('.threads'),
       content = [];
@@ -38,11 +40,15 @@ function generate(issue) {
   content.push('</div>');
   content.push('<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">'));
   content.push(marked(issue.body));
-  content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://casualjavascript.com/'  + search + '" data-text="' + issue.title + '" data-via="casualjs" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script>');
+  if (search)
+    content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-via="casualjs" data-size="large">Share</a>');
   content.push('</div>');
   content.push('</div>');
 
   parent.innerHTML += content.join('');
+
+  // exec twitter button styling
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
 
   if (issue.comments) {
     var commentContainer = document.createElement('div');
