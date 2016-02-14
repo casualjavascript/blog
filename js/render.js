@@ -14,12 +14,16 @@ function order(a, b) {
 
 // generates html from a github issue
 function generate(issue) {
+  var search = window.location.search;
+  if (search && search.indexOf(issue.id) === -1)
+    return;
+
   var parent = document.querySelector('.threads'),
       content = [];
 
   content.push('<div id="' + issue.id + '" class="post">');
   content.push('<h1 class="post-title">');
-  content.push('<a href="' + issue.html_url + '">' + issue.title + '</a>');
+  content.push('<a href="?' + issue.id + '">' + issue.title + '</a>');
   content.push('</h1>');
   content.push('<div class="post-meta-categories">');
   issue.labels.forEach(function (label) {
@@ -31,7 +35,7 @@ function generate(issue) {
   content.push('<div class="post-meta-date">');
   content.push(new Date(issue.created_at).toLocaleDateString());
   content.push('</div>');
-  content.push('<div class="post-body" onclick="this.classList.toggle(\'active\');">');
+  content.push('<div class="post-body' + (search ? ' active' : '') + '" onclick="this.classList.toggle(\'active\');">');
   content.push(marked(issue.body));
   content.push('</div>');
   content.push('</div>');
