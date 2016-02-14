@@ -35,8 +35,8 @@ function generate(issue) {
   });
   content.push('</div>');
   content.push('<div class="post-meta">');
-  content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a>, ');
-  content.push(new Date(issue.created_at).toLocaleDateString() + ', ');
+  content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
+  content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
   content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
   content.push('</div>');
   if (search) {
