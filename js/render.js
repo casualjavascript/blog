@@ -23,32 +23,29 @@ function generate(issue) {
   var parent = document.querySelector('.threads'),
       content = [];
 
-  content.push('<div id="' + issue.id + '" class="post">');
-  content.push('<h1 class="post-title">');
-  content.push('<a href="?' + issue.id + '">' + issue.title + '</a>');
-  content.push('</h1>');
-  content.push('<div class="post-meta-categories">');
+  parent.innerHTML += '<div id="' + issue.id + '" class="post">';
+  parent.innerHTML += '<h1 class="post-title">';
+  parent.innerHTML += '<a href="?' + issue.id + '">' + issue.title + '</a>';
+  parent.innerHTML += '</h1>';
+  parent.innerHTML += '<div class="post-meta-categories">';
   issue.labels.forEach(function (label) {
-    content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
-    content.push(label.name);
-    content.push('</span>');
+    parent.innerHTML += '<span class="post-meta-category" style="background: #' + label.color + '">';
+    parent.innerHTML += label.name;
+    parent.innerHTML += '</span>';
   });
-  content.push('</div>');
-  content.push('<div class="post-meta">');
-  content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a>, ');
-  content.push(new Date(issue.created_at).toLocaleDateString());
-  content.push('</div>');
-  content.push('<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">'));
-  content.push(marked(issue.body));
-  if (search)
-    content.push('<a href="https://twitter.com/share" class="twitter-share-button" data-via="casualjs" data-size="large">Tweet</a>');
-  content.push('</div>');
-  content.push('</div>');
-
-  parent.innerHTML += content.join('');
-
-  // twitter button styling
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
+  parent.innerHTML += '</div>';
+  parent.innerHTML += '<div class="post-meta">';
+  parent.innerHTML += 'by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a>, ';
+  parent.innerHTML += new Date(issue.created_at).toLocaleDateString();
+  parent.innerHTML += '</div>';
+  parent.innerHTML += '<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">');
+  parent.innerHTML += marked(issue.body);
+  if (search) {
+    parent.innerHTML += '<a href="https://twitter.com/share" class="twitter-share-button" data-via="casualjs" data-size="large">Tweet</a>';
+    parent.innerHTML += '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs")</script>';
+  }
+  parent.innerHTML += '</div>';
+  parent.innerHTML += '</div>';
 
   if (issue.comments) {
     var commentContainer = document.createElement('div');
