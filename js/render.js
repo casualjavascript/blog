@@ -79,7 +79,8 @@ function generate(issue) {
       comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
     });
-  }
+  } else if (search)
+    parent.innerHTML += '<a href="' + issue.html_url + '">add comment</a>';
 }
 
 // renders github issues
