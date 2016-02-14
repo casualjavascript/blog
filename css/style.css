@@ -99,6 +99,7 @@ pre {
   margin-bottom: 30px;
 }
 .post-comment-author {
+  font-weight: bold;
   margin-right: 8px;
 }
 .post-comment-date {
@@ -106,6 +107,10 @@ pre {
   color: #9E9E9E;
 }
 .post-comment-body {
+  background: #fafafa;
+  padding: .5rem;
+  border: 1px solid #efefef;
+  border-radius: 0 4px 4px 4px;
   margin-top: 8px;
 }
 .post-comment-body>:first-child {
