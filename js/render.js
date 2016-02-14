@@ -14,10 +14,6 @@ function order(a, b) {
 
 // generates html from a github issue
 function generate(issue) {
-  // skip issues from other users than yourself
-  if (issue.user.login !== window.USERNAME)
-    return;
-
   var parent = document.querySelector('.threads'),
       content = [];
 
@@ -48,7 +44,7 @@ function generate(issue) {
     commentContainer.innerHTML = 'Loading ' + issue.comments + ' comments...';
 
     parent.appendChild(commentContainer);
-    
+
     github._request('GET', issue.comments_url, {}, function (error, data) {
       if (error)
         return;
