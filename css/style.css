@@ -8,12 +8,13 @@ body {
   line-height: 1.5;
 }
 
-pre {
+pre, code {
   padding: .5rem;
   font-size: .9rem;
   background: #fafafa;
   border: 1px solid #efefef;
 }
+code { padding: .25rem; }
 
 .header {
   margin-bottom: 50px;
