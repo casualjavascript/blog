@@ -114,5 +114,7 @@ pre {
 }
 .post-comment-body>:first-child {
   margin-top: 0;
+}
+.post-comment-body>:last-child {
   margin-bottom: 0;
 }
