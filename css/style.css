@@ -8,6 +8,10 @@ body {
   line-height: 1.5;
 }
 
+blockquote {
+  font-size: 1rem;
+}
+
 .header {
   margin-bottom: 40px;
 }
@@ -73,7 +77,7 @@ body {
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
 }
 
-.post-meta-date {
+.post-meta {
   font-size: .75rem;
   color: #9E9E9E;
   margin-top: 4px;
