@@ -36,7 +36,8 @@ function generate(issue) {
   content.push('</div>');
   content.push('<div class="post-meta">');
   content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a>, ');
-  content.push(new Date(issue.created_at).toLocaleDateString());
+  content.push(new Date(issue.created_at).toLocaleDateString() + ' ');
+  content.push('(' + issue.comments + ' comments)');
   content.push('</div>');
   content.push('<div class="post-body' + (search ? ' active">' : '" onclick="this.classList.toggle(\'active\');">'));
   content.push(marked(issue.body));
@@ -45,13 +46,12 @@ function generate(issue) {
 
   parent.innerHTML += content.join('');
 
-  var commentContainer = document.createElement('div');
-  commentContainer.className = 'post-comments';
-  commentContainer.innerHTML = 'Loading ' + issue.comments + ' comments...';
+  if (issue.comments && search) {
+    var commentContainer = document.createElement('div');
+    commentContainer.className = 'post-comments';
+    commentContainer.innerHTML = 'Loading ' + issue.comments + ' comments...';
+    parent.appendChild(commentContainer);
 
-  document.getElementById(issue.id).appendChild(commentContainer);
-
-  if (issue.comments) {
     github._request('GET', issue.comments_url, {}, function (error, data) {
       if (error)
         return;
@@ -76,8 +76,7 @@ function generate(issue) {
       comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
     });
-  } else
-    commentContainer.innerHTML = '<a href="' + issue.html_url + '">add comment</a>';
+  }
 }
 
 // renders github issues

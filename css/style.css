@@ -51,6 +51,7 @@ pre {
 .post-body {
   font-family: Georgia, serif;
   font-size: 1rem;
+  margin-bottom: 40px;
 }
 .post-body:not(.active)>*  {
   display: none;
@@ -94,6 +95,7 @@ pre {
 
 .post-comments {}
 .post-comment {
+  font-size: 1rem;
   margin-bottom: 30px;
 }
 .post-comment-author {
