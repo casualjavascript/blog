@@ -17,7 +17,7 @@ function generate(issue) {
   var search = window.location.search;
   if (search && search.indexOf(issue.id) === -1)
     return;
-  else
+  else if (search)
     document.title = issue.title;
 
   var parent = document.querySelector('.threads'),
