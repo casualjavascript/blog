@@ -32,18 +32,23 @@ function generate(issue) {
   content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
   content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
   content.push('</div>');
-  content.push('<div class="post-meta-categories">tags: ');
-  issue.labels.forEach(function (label) {
-    content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
-    content.push(label.name);
-    content.push('</span>');
-  });
-  content.push('</div>');
+
+  if (issue.labels.length) {
+    content.push('<div class="post-meta-categories">tags: ');
+    issue.labels.forEach(function (label) {
+      content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
+      content.push(label.name);
+      content.push('</span>');
+    });
+    content.push('</div>');
+  }
+
   if (search) {
     content.push('<div class="post-body">');
     content.push(marked(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
     content.push('</div>');
   }
+  
   content.push('</div>');
 
   parent.innerHTML += content.join('');
