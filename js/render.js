@@ -41,7 +41,7 @@ function generate(issue) {
   content.push('</div>');
   if (search) {
     content.push('<div class="post-body">');
-    content.push(marked(issue.body).replace('<pre>', '<pre class="prettyprint">'));
+    content.push(marked(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
     content.push('</div>');
   }
   content.push('</div>');
