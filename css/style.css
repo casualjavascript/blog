@@ -21,9 +21,9 @@ code { padding: .25rem; }
 }
 .header>.title {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: normal;
-  line-height: 1;
+  line-height: .9;
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -33,12 +33,16 @@ code { padding: .25rem; }
   padding-bottom: 4px;
   font-size: .9rem;
 }
-.header>.description>p {
+.header>.description>p, .footer>p {
   display: inline-block;
   padding: 10px;
   margin-top: 0;
   border: 1px solid #efefef;
   border-radius: 4px;
+}
+
+.threads {
+  margin-bottom: 40px;
 }
 
 .post {
@@ -48,6 +52,7 @@ code { padding: .25rem; }
 .post-title {
   display: inline-block;
   margin-right: 16px;
+  font-family: 'Roboto Slab', serif;
   font-size: 2rem;
   line-height: 1;
 }
@@ -59,7 +64,7 @@ code { padding: .25rem; }
   font-size: 1rem;
   margin-bottom: 40px;
 }
-.post-body p, .post-body li {
+.post-body {
   font-family: Georgia, serif;
 }
 
