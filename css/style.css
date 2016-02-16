@@ -31,14 +31,14 @@ code { padding: .25rem; }
   margin-top: 0;
   padding-top: 4px;
   padding-bottom: 4px;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 .header>.description>p {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 10px;
   margin-top: 0;
   border: 1px solid #efefef;
-  border-radius: 0 4px 4px 4px;
+  border-radius: 4px;
 }
 
 .post {
