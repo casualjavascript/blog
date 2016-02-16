@@ -27,27 +27,27 @@ function generate(issue) {
   content.push('<h1 class="post-title">');
   content.push('<a href="?' + issue.id + '">' + issue.title + '</a>');
   content.push('</h1>');
-  content.push('<div class="post-meta-categories">');
+  content.push('<div class="post-meta">');
+  content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
+  content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
+  content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
+  content.push('</div>');
+  content.push('<div class="post-meta-categories">tags: ');
   issue.labels.forEach(function (label) {
     content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
     content.push(label.name);
     content.push('</span>');
   });
   content.push('</div>');
-  content.push('<div class="post-meta">');
-  content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
-  content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
-  content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
-  content.push('</div>');
   if (search) {
     content.push('<div class="post-body">');
-    content.push(marked(issue.body));
+    content.push(marked(issue.body).replace('<pre>', '<pre class="prettyprint">'));
     content.push('</div>');
   }
-
   content.push('</div>');
 
   parent.innerHTML += content.join('');
+  prettyPrint();
 
   if (issue.comments && search) {
     var commentContainer = document.createElement('div');

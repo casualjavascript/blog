@@ -37,7 +37,7 @@ code { padding: .25rem; }
   display: inline-block;
   padding: 8px 16px;
   margin-top: 0;
-  background: #fafafa;
+  border: 1px solid #efefef;
   border-radius: 0 4px 4px 4px;
 }
 
@@ -64,7 +64,9 @@ code { padding: .25rem; }
 }
 
 .post-meta-categories {
-  color: #ffffff;
+  font-size: .8rem;
+  color: #9e9e9e;
+  margin-bottom: 30px;
 }
 .post-meta-category {
   vertical-align: top;
@@ -73,14 +75,15 @@ code { padding: .25rem; }
   border-radius: 4px;
   font-size: .75rem;
   font-weight: bold;
+  color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
 }
 
 .post-meta {
   font-size: .75rem;
   color: #9E9E9E;
-  margin-top: 4px;
-  margin-bottom: 20px;
+  margin-top: -4px;
+  margin-bottom: 4px;
 }
 
 .post-comments {}
