@@ -102,10 +102,13 @@ code { padding: .25rem; }
 }
 .post-comment-body {
   background: #fafafa;
-  padding: 8px 16px;
+  padding: 8px;
   border: 1px solid #efefef;
   border-radius: 0 4px 4px 4px;
   margin-top: 8px;
+}
+.post-comment-body code {
+  background: #fff;
 }
 .post-comment-body>:first-child {
   margin-top: 0;

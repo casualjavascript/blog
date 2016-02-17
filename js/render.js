@@ -48,7 +48,7 @@ function generate(issue) {
     content.push(marked(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
     content.push('</div>');
   }
-  
+
   content.push('</div>');
 
   parent.innerHTML += content.join('');
@@ -76,13 +76,15 @@ function generate(issue) {
         comments.push(new Date(comment.created_at).toLocaleDateString());
         comments.push('</span>');
         comments.push('<div class="post-comment-body">');
-        comments.push(marked(comment.body));
+        comments.push(marked(comment.body).replace(/<pre>/g, '<pre class="prettyprint">'));
         comments.push('</div>');
         comments.push('</div>');
       });
 
       comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
+      
+      prettyPrint();
     });
   } else if (search)
     parent.innerHTML += '<a href="' + issue.html_url + '">add comment</a>';
