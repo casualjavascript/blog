@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  line-height: 1.5;
+  font: 100%/1.5 'PT Serif', serif;
 }
 
 pre, code {
@@ -31,7 +31,6 @@ code { padding: .25rem; }
   margin-top: 0;
   padding-top: 4px;
   padding-bottom: 4px;
-  font-size: .9rem;
 }
 .header>.description>p, .footer>p {
   display: inline-block;
@@ -63,9 +62,6 @@ code { padding: .25rem; }
 .post-body {
   font-size: 1rem;
   margin-bottom: 40px;
-}
-.post-body {
-  font-family: Georgia, serif;
 }
 
 .post-meta-categories {
