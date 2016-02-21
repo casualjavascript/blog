@@ -17,14 +17,10 @@ pre, code {
 code { padding: .25rem; }
 
 .header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.header>.title {
-  display: inline-block;
-  font-size: 1.75rem;
-  font-weight: normal;
-  line-height: .9;
-  margin-right: 20px;
+.header img {
+  width: 96px;
   margin-bottom: 20px;
 }
 .header>.description {
