@@ -22,6 +22,7 @@ code { padding: .25rem; }
 .header img {
   margin-top: 4px;
   margin-left: -74px;
+  margin-bottom: 8px;
   vertical-align: top;
   display: inline-block;
   width: 64px;
