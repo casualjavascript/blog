@@ -22,7 +22,6 @@ code { padding: .25rem; }
 .header img {
   margin-top: 4px;
   margin-left: -74px;
-  margin-bottom: 8px;
   vertical-align: top;
   display: inline-block;
   width: 64px;
@@ -30,7 +29,6 @@ code { padding: .25rem; }
 }
 .header>.description {
   display: inline-block;
-  width: 80%;
   padding-top: 4px;
   padding-bottom: 4px;
 }
