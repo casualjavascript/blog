@@ -68,6 +68,12 @@ code { padding: .25rem; }
   color: #000;
 }
 
+@media (max-width: 1034px) {
+  .post-title {
+    font-size: 1.5rem;
+  }
+}
+
 .post-body {
   font-size: 1rem;
   margin-bottom: 40px;
