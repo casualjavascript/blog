@@ -34,7 +34,7 @@ function generate(issue) {
   content.push('</div>');
 
   if (issue.labels.length) {
-    content.push('<div class="post-meta-categories">tags: ');
+    content.push('<div class="post-meta-categories">');
     issue.labels.forEach(function (label) {
       content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
       content.push(label.name);
@@ -83,7 +83,7 @@ function generate(issue) {
 
       comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
-      
+
       prettyPrint();
     });
   } else if (search)
