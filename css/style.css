@@ -45,7 +45,12 @@ code { padding: .25rem; }
 
 @media (max-width: 1034px) {
   .header img {
+    display: block;
     margin-left: 0;
+  }
+  .header>.description {
+    display: block;
+    margin-top: 10px;
   }
 }
 
