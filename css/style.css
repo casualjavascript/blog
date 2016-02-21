@@ -16,6 +16,12 @@ pre, code {
 }
 code { padding: .25rem; }
 
+a {
+  color: #009688;
+  background: rgba(0, 150, 136, 0);
+  transition: background-color .4s;
+}
+
 .header {
   margin-bottom: 20px;
 }
@@ -26,6 +32,10 @@ code { padding: .25rem; }
   display: inline-block;
   width: 64px;
   margin-right: 10px;
+  opacity: .8;
+}
+.header img:hover {
+  opacity: 1;
 }
 .header>.description {
   display: inline-block;
@@ -98,6 +108,8 @@ code { padding: .25rem; }
   font-style: italic;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+  letter-spacing: .5px;
+  opacity: .8;
 }
 
 .post-meta {
