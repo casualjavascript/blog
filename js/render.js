@@ -33,7 +33,7 @@ function generate(issue) {
   content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
   content.push('</div>');
 
-  if (issue.labels.length) {
+  if (search && issue.labels.length) {
     content.push('<div class="post-meta-categories">');
     issue.labels.forEach(function (label) {
       content.push('<span class="post-meta-category" style="background: #' + label.color + '">');
