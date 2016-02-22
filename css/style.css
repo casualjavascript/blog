@@ -8,6 +8,10 @@ body {
   font: 100%/1.5 'PT Serif', serif;
 }
 
+table * {
+  border: none !important;
+}
+
 pre, code {
   padding: .5rem;
   font-size: .9rem;
