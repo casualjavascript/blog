@@ -25,17 +25,12 @@ a {
 .header {
   margin-bottom: 20px;
 }
-.header img {
-  margin-top: 4px;
+.header>a {
   margin-left: -74px;
   vertical-align: top;
   display: inline-block;
   width: 64px;
   margin-right: 10px;
-  opacity: .8;
-}
-.header img:hover {
-  opacity: 1;
 }
 .header>.description {
   display: inline-block;
@@ -48,19 +43,27 @@ a {
 .header>.description>p, .footer>p {
   display: inline-block;
   padding: 10px;
-  margin-top: 0;
   border: 1px solid #efefef;
   border-radius: 4px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1034px) {
-  .header img {
+  .header>a {
     display: block;
     margin-left: 0;
+    float: left;
+  }
+  .header>.description, .footer>p {
+    font-size: .85rem;
   }
   .header>.description {
-    display: block;
-    margin-top: 10px;
+    margin-top: -18px;
+    width: calc(100% - 74px);
+    float: left;
+  }
+  .header>.description:after {
+    content: " ";
   }
 }
 
