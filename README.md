@@ -1,9 +1,6 @@
-# openblog
+# <img width="48" height="48" src="logo.png" alt="casualjs" title="logo">
 
-Setting up your own blog:
+A JavaScript programming initiative that serves its own Github issues as
+articles at **https://casualjavascript.com**.
 
-1. Fork [this repository](https://github.com/mateogianolio/openblog).
-2. Create a Github personal access token.
-3. Open `js/globals.js` and change `USERNAME` to your username and `TOKEN` to the token you just created.
-
-Edit `css/style.css` for styling.
+[**Submit an issue**](https://github.com/casualjavascript/blog/issues/new) and it will automatically appear on the website (with markdown formatting).
