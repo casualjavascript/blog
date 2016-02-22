@@ -23,7 +23,7 @@ a {
 }
 
 .header {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .header>a {
   margin-left: -74px;
@@ -87,6 +87,9 @@ a {
 }
 
 @media (max-width: 1034px) {
+  .post {
+    margin-bottom: 20px;
+  }
   .post-title {
     font-size: 1.5rem;
   }
