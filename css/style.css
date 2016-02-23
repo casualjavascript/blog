@@ -1,6 +1,6 @@
 html {
-  width: 100%;
-  max-width: 960px;
+  width: 90%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -17,57 +17,52 @@ pre, code {
   font-size: .9rem;
   background: #fafafa;
   border: 1px solid #efefef;
+  word-wrap: break-word;
 }
 code { padding: .25rem; }
+pre>code { padding: 0; background: none; border: none; }
 
 a {
   color: #009688;
-  background: rgba(0, 150, 136, 0);
-  transition: background-color .4s;
+  text-decoration: none;
 }
 
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
-.header>a {
-  margin-left: -74px;
-  vertical-align: top;
-  display: inline-block;
+.header>.logo {
   width: 64px;
-  margin-right: 10px;
-}
-.header>.description {
+  height: 64px;
+  margin-top: 10px;
+  margin-left: -84px;
+  margin-right: 20px;
   display: inline-block;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  vertical-align: top;
+  background: url(../logo.png);
+  background-size: cover;
+  text-indent: -999px;
 }
-.header>.description:after {
-  clear: both;
-}
-.header>.description>p, .footer>p {
+.header>.description, .footer {
   display: inline-block;
   padding: 10px;
   border: 1px solid #efefef;
   border-radius: 4px;
-  margin-bottom: 0;
 }
 
-@media (max-width: 1034px) {
-  .header>a {
+@media (max-width: 960px) {
+  .header>.logo {
     display: block;
+    width: 48px;
+    height: 48px;
+    margin-top: 16px;
     margin-left: 0;
     float: left;
   }
-  .header>.description, .footer>p {
-    font-size: .85rem;
+  .header>.description, .footer {
+    font-size: .75rem;
   }
   .header>.description {
-    margin-top: -18px;
-    width: calc(100% - 74px);
     float: left;
-  }
-  .header>.description:after {
-    content: " ";
   }
 }
 
@@ -76,7 +71,7 @@ a {
 }
 
 .post {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .post-title {
@@ -90,12 +85,12 @@ a {
   color: #000;
 }
 
-@media (max-width: 1034px) {
+@media (max-width: 960px) {
   .post {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .post-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -114,7 +109,7 @@ a {
   margin-right: 4px;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: .75rem;
+  font-size: .7rem;
   font-style: italic;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
@@ -125,8 +120,14 @@ a {
 .post-meta {
   font-size: .75rem;
   color: #9E9E9E;
-  margin-top: -4px;
+  margin-top: -16px;
   margin-bottom: 4px;
+}
+
+@media (max-width: 960px) {
+  .post-meta {
+    margin-top: -8px;
+  }
 }
 
 .post-comments {}

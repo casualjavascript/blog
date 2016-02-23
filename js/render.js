@@ -25,7 +25,7 @@ function post(error, issue) {
 
   content.push('<div id="' + issue.id + '" class="post">');
   content.push('<h1 class="post-title">');
-  content.push('<a href="?' + issue.id + '">' + issue.title + '</a>');
+  content.push('<a href="?' + issue.number + '">' + issue.title + '</a>');
   content.push('</h1>');
   content.push('<div class="post-meta">');
   content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
