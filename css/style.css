@@ -17,7 +17,7 @@ pre, code {
   font-size: .9rem;
   background: #fafafa;
   border: 1px solid #efefef;
-  word-wrap: break-word;
+  overflow: scroll;
 }
 code { padding: .25rem; }
 pre>code { padding: 0; background: none; border: none; }
