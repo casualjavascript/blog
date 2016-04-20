@@ -30,7 +30,7 @@ function post(error, issue) {
   content.push('<div class="post-meta">');
   content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
   content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
-  content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
+  content.push('<a href="' + issue.html_url + '">' + (issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'discuss')) + '</a>');
   content.push('</div>');
 
   if (issue.labels.length) {
@@ -68,22 +68,18 @@ function post(error, issue) {
         comments.push('<a class="post-comment-author" href="' + comment.user.html_url + '">');
         comments.push(comment.user.login);
         comments.push('</a>');
-        comments.push('<span class="post-comment-date">');
+        comments.push('<span class="post-comment-date">commented ');
         comments.push(new Date(comment.created_at).toLocaleDateString());
-        comments.push('</span>');
+        comments.push(':</span>');
         comments.push('<div class="post-comment-body">');
         comments.push(marked(comment.body).replace(/<pre>/g, '<pre class="prettyprint">'));
         comments.push('</div>');
         comments.push('</div>');
       });
 
-      comments.push('<a href="' + issue.html_url + '">add comment</a>');
       commentContainer.innerHTML += comments.join('');
-
       prettyPrint();
     });
-  } else {
-    parent.innerHTML += '<a href="' + issue.html_url + '">add comment</a>';
   }
 }
 
@@ -104,7 +100,7 @@ function list(error, issues) {
     content.push('<div class="post-meta">');
     content.push('by <a href="' + issue.user.html_url + '">' + issue.user.login + '</a> &middot; ');
     content.push(new Date(issue.created_at).toLocaleDateString() + ' &middot; ');
-    content.push((issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'no comments')));
+    content.push('<a href="' + issue.html_url + '">' + (issue.comments === 1 ? '1 comment' : (issue.comments ? (issue.comments + ' comment(s)') : 'discuss')) + '</a>');
     content.push('</div>');
     content.push('</div>');
   });
