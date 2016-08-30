@@ -5,47 +5,25 @@
     <title>Casual JavaScript</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Articles of casual nature written in javascript.">
+    <meta name="description" content="A collection of short and informative programming articles written in JavaScript. 100% open-source.">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/prettify.css" />
 
-    <script src="js/github.bundle.min.js"></script>
-    <script src="js/marked.min.js"></script>
-    <script src="js/prettify.js"></script>
+    <script src="https://npmcdn.com/github-api/dist/GitHub.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
 
     <script src="js/globals.js"></script>
     <script src="js/render.js"></script>
 
     <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-
-    <!-- Piwik -->
-    <script type="text/javascript">
-      var _paq = _paq || [];
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="//46.101.89.54/analytics/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', 1]);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <noscript><p><img src="//46.101.89.54/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body onload="render()">
     <div class="header">
       <a class="logo" href="https://casualjavascript.com">Casual JavaScript</a>
     </div>
     <div class="threads"></div>
-    <p class="footer">
-      A JavaScript programming initiative that serves its own Github issues as articles.<br>
-      <a href="https://github.com/casualjavascript/openblog/issues/new"><strong>Submit an issue</strong></a>
-      and it will automatically appear on the website with markdown formatting.<br>
-      <a href="https://github.com/casualjavascript/blog"><strong>Visit the website repository</strong></a>
-      to view the source and contribute.
-    </p>
   </body>
 </html>

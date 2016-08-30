@@ -1,6 +1,6 @@
 'use strict';
 
-var github = new Github({
+var github = new GitHub({
   token: TOKEN,
   auth: 'oauth'
 });
@@ -43,8 +43,10 @@ function post(error, issue) {
     content.push('</div>');
   }
 
+  var markdown = new Remarkable();
+
   content.push('<div class="post-body">');
-  content.push(marked(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
+  content.push(markdown.render(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
   content.push('</div>');
 
   parent.innerHTML += content.join('');
@@ -56,7 +58,7 @@ function post(error, issue) {
     commentContainer.innerHTML = 'Loading ' + issue.comments + ' comments...';
     parent.appendChild(commentContainer);
 
-    github._request('GET', issue.comments_url, {}, function (error, data) {
+    this.listIssueComments(issue.number, function (error, data) {
       if (error)
         return;
 
@@ -72,7 +74,7 @@ function post(error, issue) {
         comments.push(new Date(comment.created_at).toLocaleDateString());
         comments.push(':</span>');
         comments.push('<div class="post-comment-body">');
-        comments.push(marked(comment.body).replace(/<pre>/g, '<pre class="prettyprint">'));
+        comments.push(markdown.render(comment.body).replace(/<pre>/g, '<pre class="prettyprint">'));
         comments.push('</div>');
         comments.push('</div>');
       });
@@ -115,8 +117,8 @@ function render() {
   var issues = github.getIssues(USERNAME, REPO),
       id = window.location.search.replace('?', '');
 
-  if (id) {
-    issues.get(id, post);
-  } else
-    issues.list({}, list);
+  if (id)
+    issues.getIssue(id, post.bind(issues));
+  else
+    issues.listIssues({}, list);
 }
