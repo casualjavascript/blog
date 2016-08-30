@@ -77,6 +77,7 @@ blockquote {
   font-size: 1.75rem;
   line-height: 1;
   margin-bottom: 0;
+  z-index: 1;
 }
 .post-title>a {
   color: #000;
