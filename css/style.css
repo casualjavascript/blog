@@ -19,12 +19,12 @@ table td {
 
 code { padding: .25rem; }
 pre, pre>code {
-  margin-left: -.5rem;
+  margin-left: -.52rem;
   margin-right: -.5rem;
   padding: .5rem 0;
   font-size: .8rem;
-  background: #fafafa !important;
   overflow: scroll;
+  border-left: 1px solid #B2DFDB;
 }
 table pre, table pre>code {
   background: transparent !important;
