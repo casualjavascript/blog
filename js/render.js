@@ -90,7 +90,10 @@ function list(error, issues) {
   if (error || !issues)
     return;
 
-  issues = issues.sort(order);
+  issues = issues.sort(function (a, b) {
+    return b.id - a.id;
+  });
+
   var parent = document.querySelector('.threads'),
       content = [];
 
