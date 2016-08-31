@@ -13,14 +13,23 @@ table * {
   border: none !important;
 }
 
+table td {
+  padding-right: 1rem;
+}
+
 code { padding: .25rem; }
 pre, pre>code {
+  margin-left: -.5rem;
+  margin-right: -.5rem;
   padding: .5rem 0;
   font-size: .8rem;
-  background: #fafafa;
+  background: #fafafa !important;
   overflow: scroll;
 }
-pre>code { padding: 0; background: none; border: none; }
+table pre, table pre>code {
+  background: transparent !important;
+}
+pre>code { padding: 0 .5rem; background: none; border: none; }
 
 a {
   color: #009688;
@@ -44,6 +53,14 @@ blockquote {
   text-indent: -999px;
 }
 
+.header>.follow {
+  position: relative;
+  height: 0;
+  top: 1rem;
+  left: -1rem;
+  margin-left: -84px;
+}
+
 .footer {
   display: inline-block;
   border-radius: 4px;
@@ -52,17 +69,23 @@ blockquote {
 
 .threads {
   margin-top: -60px;
-  padding-left: 1rem;
 }
 
 @media (max-width: 960px) {
   .header>.logo {
     position: relative;
-    display: block;
+    display: inline-block;
     width: 48px;
     height: 48px;
     margin-top: 16px;
     margin-left: -16px;
+  }
+
+  .header>.follow {
+    margin-left: 0;
+    left: auto;
+    top: -1.75rem;
+    text-align: right;
   }
 
   .threads {
@@ -74,6 +97,10 @@ blockquote {
   }
 }
 
+.post {
+  padding-left: .5rem;
+  border-left: 1px solid #efefef;
+}
 .post-title {
   margin-right: 16px;
   font-family: 'PT Sans', serif;

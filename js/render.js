@@ -43,7 +43,7 @@ function post(error, issue) {
     content.push('</div>');
   }
 
-  var markdown = new Remarkable();
+  var markdown = new Remarkable({ html: true });
 
   content.push('<div class="post-body">');
   content.push(markdown.render(issue.body).replace(/<pre>/g, '<pre class="prettyprint">'));
